@@ -810,6 +810,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     new_content: Attribute.Blocks;
     old_content: Attribute.RichText;
     admin_user: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
