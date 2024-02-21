@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "employee_id": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "unique": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "linkdin": {
+      "type": "string",
+      "unique": true
+    },
+    "employee_gender": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee-gender.employee-gender",
+      "inversedBy": "employees"
+    },
+    "employee_comment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee-comment.employee-comment",
+      "mappedBy": "employee"
+    }
+  }
+}

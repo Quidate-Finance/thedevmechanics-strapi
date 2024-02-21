@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employee_genders",
+  "info": {
+    "singularName": "employee-gender",
+    "pluralName": "employee-genders",
+    "displayName": "Employee_Gender"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "employee_gender"
+    },
+    "gender_id": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "job_id": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "experience": {
+      "type": "integer",
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "about_us": {
+      "type": "text",
+      "required": false,
+      "default": "DevMechanics is a cutting-edge design agency that thrives on innovation and setting industry standards. With a commitment to technological excellence, we specialize in crafting high-performance, immersive, and SEO-friendly websites. Our team, composed of digital wizards, collaborates to transform ideas into innovations, ensuring our clients' visions evolve into success stories."
+    },
+    "new_about_you": {
+      "type": "blocks"
+    },
+    "old_about_you": {
+      "type": "richtext"
+    },
+    "new_about_role": {
+      "type": "blocks"
+    },
+    "old_about_role": {
+      "type": "richtext"
+    },
+    "new_benefit": {
+      "type": "blocks"
+    },
+    "old_benefit": {
+      "type": "richtext"
+    }
+  }
+}
