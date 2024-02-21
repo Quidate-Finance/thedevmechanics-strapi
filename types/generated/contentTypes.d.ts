@@ -811,6 +811,8 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     old_content: Attribute.RichText;
     admin_user: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
     description: Attribute.Text;
+    blog_id: Attribute.UID &
+      Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
