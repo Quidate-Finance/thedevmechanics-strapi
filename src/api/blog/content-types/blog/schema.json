@@ -37,10 +37,10 @@
     "old_content": {
       "type": "richtext"
     },
-    "admin_user": {
+    "users_permissions_user": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "admin::user"
+      "target": "plugin::users-permissions.user"
     },
     "description": {
       "type": "text"
@@ -50,14 +50,15 @@
       "customField": "plugin::strapi-advanced-uuid.uuid"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

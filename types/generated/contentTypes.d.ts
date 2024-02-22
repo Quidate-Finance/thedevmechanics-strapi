@@ -811,7 +811,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     date_created: Attribute.Date;
     new_content: Attribute.Blocks;
     old_content: Attribute.RichText;
-    admin_user: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
+    users_permissions_user: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     description: Attribute.Text;
     blog_id: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
