@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "full_name": {
       "type": "string",
       "required": true
     },
@@ -20,7 +20,7 @@
       "type": "customField",
       "customField": "plugin::strapi-advanced-uuid.uuid"
     },
-    "role": {
+    "job_title": {
       "type": "string",
       "required": true
     },
@@ -51,6 +51,22 @@
       "relation": "oneToOne",
       "target": "api::employee-comment.employee-comment",
       "mappedBy": "employee"
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "biginteger",
+      "required": false,
+      "unique": true
     }
   }
 }

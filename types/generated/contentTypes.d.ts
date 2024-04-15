@@ -961,10 +961,10 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    full_name: Attribute.String & Attribute.Required;
     employee_id: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
-    role: Attribute.String & Attribute.Required;
+    job_title: Attribute.String & Attribute.Required;
     email: Attribute.String & Attribute.Unique;
     image: Attribute.Media;
     linkdin: Attribute.String & Attribute.Unique;
@@ -978,6 +978,10 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'oneToOne',
       'api::employee-comment.employee-comment'
     >;
+    first_name: Attribute.String & Attribute.Required;
+    last_name: Attribute.String & Attribute.Required;
+    department: Attribute.String;
+    phone_number: Attribute.BigInteger & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
