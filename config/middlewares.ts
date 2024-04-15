@@ -1,6 +1,14 @@
 export default [
 	'strapi::logger',
-	'strapi::errors',
+	{
+		name: 'strapi::errors', config: {
+			enabled: true,
+			origin: ['https://www.thedevmechanics.com'],
+			headers: ['Content-Type', 'Authorization', 'X-Frame-Options'],
+			methods: ['GET', 'POST'],
+			credentials: true,
+		}
+	},
 	{
 		name: "strapi::security",
 		config: {
